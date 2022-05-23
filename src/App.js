@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Componentes from "./Componentes/wishlist.jsx";
+import Componentes from "./Componentes/preba";
 //import Componentes from "./Componentes/preba.jsx";
 
 
