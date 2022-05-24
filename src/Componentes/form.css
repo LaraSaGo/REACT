@@ -1,0 +1,14 @@
+
+.index {
+   
+    padding: 0 2rem 2rem 2rem;
+    margin: 7rem 10rem 10rem 7rem;
+}
+.titulo {
+    font-size: xx-large;
+    width: 500px;
+}
+.respuesta {
+    font-size: medium;
+    width: 800px;
+}

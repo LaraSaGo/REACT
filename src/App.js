@@ -1,25 +1,19 @@
 //import logo from './logo.svg';
 //import './App.css';
-import Componentes from "./Componentes/preba";
-//import Componentes from "./Componentes/preba.jsx";
+import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
+//import {BrowserRouter as Router, Route} from 'react-router-dom'
+import Formulario from "./Componentes/form"
 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Componentes></Componentes>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <div className="App">
+      <Formulario></Formulario>
+      </div>
+    );
 }
-
+//<Router>
+//<Route exact path="./Componentes/form" component={Formulario} />
+//</Router>
 export default App;
