@@ -5,10 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 //import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Formulario from "./Componentes/form"
 
+document.body.style.backgroundColor = "gray";
 
 function App() {
     return (
-      <div className="App">
+      <div>
       <Formulario></Formulario>
       </div>
     );

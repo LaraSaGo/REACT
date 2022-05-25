@@ -1,14 +1,66 @@
 
 .index {
-   
+    width: 800px;
+    height: 1000px;
     padding: 0 2rem 2rem 2rem;
     margin: 7rem 10rem 10rem 7rem;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
 }
+
 .titulo {
-    font-size: xx-large;
+    padding-top: 70px;
+}
+.titulo-label {
+    font-size: x-large;
     width: 500px;
 }
-.respuesta {
+.titulo-respuesta {
     font-size: medium;
-    width: 800px;
+    width: 736px;
+}
+
+.equipos {
+   
+    font-size: medium;
+    width: 350px;
+    height: 100px;
+    float: left;
+}
+
+.equipos-menu {
+    width: 350px;
+}
+.canal {
+    font-size: medium;
+    width: 350px;
+    height: 100px;
+    float: right;
+}
+
+.canal-menu {
+    width: 350px;
+}
+
+.ubicacion {
+    float: right;
+    font-size: medium;
+    width: 530px;
+    height: 100px;
+}
+.ubicacion-respuesta{
+    width: 530px;
+}
+.fecha {
+    float: left;
+}
+
+.orden {
+    width: 735px;
+    height: 150px;
+    float: left;
+}
+
+.asistentes {
+    float: left;
 }
