@@ -1,7 +1,26 @@
 import React, {useState} from "react";
 import './form.css'
+import 'antd/dist/antd.css';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Select } from 'antd';
+const { Option } = Select;
+const asistentes = [];
+const children = [];
+
+//for (let i = 10; i < 36; i++) {
+//  children.push(<Option key={i.toString(36) + i}>{i.toString(36) + i}</Option>);
+//}
+
+asistentes.push(<Option key={1}>juan</Option>);
+asistentes.push(<Option key={2}>juanito</Option>);
+asistentes.push(<Option key={3}>juancho</Option>);
+asistentes.push(<Option key={4}>juanchi</Option>);
+
+const handleChange = (value) => {
+  console.log(`selected ${value}`);
+};
+
 
 const Formulario = () => {
    
@@ -58,10 +77,37 @@ const Formulario = () => {
                         onChange={(e) => setUbicacion(e.target.value)} type="text"/></p>
                 </div>
                 <div className="asistentes">
-
+                    <p><label>Asistentes</label></p>
+                <>
+                    <Select
+                    mode="multiple"
+                    allowClear
+                    style={{
+                        width: '100%',
+                      }}
+                    placeholder="Seleccione asistentes"
+                    onChange={handleChange}
+                    >
+                    {asistentes}
+                    </Select>
+                </>
                 </div>
-                <div>
-                Invitados
+
+                <div className="invitados">
+                    <p><label>Invitados</label></p>
+                <>
+                    <Select
+                    mode="multiple"
+                    allowClear
+                    style={{
+                        width: '100%',
+                      }}
+                    placeholder="Seleccione invitados"
+                    onChange={handleChange}
+                    >
+                    {children}
+                    </Select>
+                </>
                 </div>
                 <div className="orden">
                     <p className="titulo-label"><label>Orden de la reunión</label></p>
@@ -70,9 +116,7 @@ const Formulario = () => {
                         onChange={ ( event, editor ) => {
                         const data = editor.getData();
                         console.log( { event, editor, data } );
-                    } }
-                    
-                   
+                    } }   
                     />
                 </div>
 

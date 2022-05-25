@@ -30,6 +30,7 @@
 
 .equipos-menu {
     width: 350px;
+    font-size: medium;
 }
 .canal {
     font-size: medium;
@@ -40,6 +41,7 @@
 
 .canal-menu {
     width: 350px;
+    font-size: medium;
 }
 
 .ubicacion {
@@ -50,12 +52,15 @@
 }
 .ubicacion-respuesta{
     width: 530px;
+    font-size: medium;
 }
 .fecha {
+    font-size: medium;
     float: left;
 }
 
 .orden {
+    font-size: medium;
     width: 735px;
     height: 150px;
     float: left;
@@ -63,4 +68,11 @@
 
 .asistentes {
     float: left;
+    font-size: medium;
+    width: 350px;
+}
+.invitados {
+    float: right;
+    font-size: medium;
+    width: 350px;
 }
