@@ -71,8 +71,17 @@
     font-size: medium;
     width: 350px;
 }
+
 .invitados {
     float: right;
     font-size: medium;
     width: 350px;
+}
+
+.boton {
+    float: right;
+    width: 200px;
+    height: 150px;
+    margin-top: 50px;
+    margin-right: 250px;
 }
