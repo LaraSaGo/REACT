@@ -25,6 +25,7 @@ const Formulario = () => {
     const mostrarModal = () => setMostrar(true);
 
     
+    
 
 //useEffect(() => {
 //  console.log(equipos);
@@ -38,6 +39,7 @@ const Formulario = () => {
                     <p><label className="titulo-label">Título de la reunión</label></p>
                     <p><input className="titulo-respuesta"
                         type="text"
+                        maxlength="50"
                         value={titulo}
                         onChange={(e) => setTitulo(e.target.value)}
                         placeholder="Inserte el título de acta de la reunión"
@@ -105,7 +107,7 @@ const Formulario = () => {
 
                 <div className="invitados">
                     <p><label>Invitados</label></p>
-                <>
+                <React.Fragment>
                     <Select
                     mode="multiple"
                     allowClear
@@ -120,7 +122,7 @@ const Formulario = () => {
                     value={invitado}
                     onChange={(e) => setInvitados(e.target.value)}
                     </Select>
-                </>
+                </React.Fragment>
                 </div>
                 <div className="orden">
                     <p><label className="titulo-label">Orden de la reunión</label></p>
@@ -130,7 +132,7 @@ const Formulario = () => {
                         onChange={ ( event, editor,e) => {
                             const data = editor.getData();
                             console.log( { event, editor, data } );
-                            setOrden(event.target.value)
+                            setOrden(data)
                         } }   
                     />
                 </div>
@@ -139,11 +141,11 @@ const Formulario = () => {
                     <p className="titulo-label"><label>Notas de la reunión</label></p>
                     <CKEditor
                         editor={ ClassicEditor }
-                        value = {notas}
+                        value={notas}
                         onChange={ ( event, editor) => {
                             const data = editor.getData();
                             console.log( { event, editor, data } );
-                            setNotas(event.target.value)
+                            setNotas(data)
                     } }
                     />
                 </div> 
@@ -154,18 +156,36 @@ const Formulario = () => {
                             htmlType="submit"
                             onClick={mostrarModal}
                     >       
-                            Guardar
+                            Confirmar
                     </Button>
                 </div>
             
-                    <Modal title="Nuevo compromiso" visible={mostrar} onOk={ok} onCancel={esconderModal}>
-                        <p>Vencimiento {fecha} </p>
-                        <p></p>
-                        <p>Some contents...</p>
-                    </Modal>
-        
+                    <Modal title="Nuevo compromiso"
+                    visible={mostrar}
+                    onOk={ok}
+                    onCancel={esconderModal}>
+
+                    <dir className="modal1">
+                        <p><label className="modal1__lb">Vencimiento</label></p>
+                        <p><input className="modal1__in" type="date"></input></p>
+                    </dir>
+                    <dir className="modal2">
+                        <p><label className="modal2__lb">Título</label></p>
+                        <p><textarea className="modal2__in"
+                        type="text"
+                        maxLength="50">
+                        </textarea></p>
+                    </dir>
+                    <dir className="modal3">
+                        <p><label className="modal3__lb">Descripción</label></p>
+                        <p><textarea className="modal3__in" type="text"></textarea></p>                
+                    </dir>
+                        <dir className="modal4">
+                    </dir>
+                    <dir className="modal5">
                 
-           
+                    </dir>
+                    </Modal>  
         </div>
         </center> 
     )
