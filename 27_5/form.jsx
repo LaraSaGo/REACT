@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import './form.css'
+import React, {useState} from "react";
+import './form.css';
 import 'antd/dist/antd.css';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { Select,Button } from 'antd';
+import { Select,Button} from 'antd';
 import NuevoCompromiso from "./nuevo_compromiso";
 const { Option } = Select;
 const invitados = [{nombre: 'Alex', id: 1},{nombre: 'Alex2', id: 2},{nombre: 'Alex3', id: 3}];
@@ -24,13 +24,6 @@ const Formulario = () => {
    // const esconderModal = () => setMostrar(false);
    // const ok = () => setMostrar(false);
     const mostrarModal = () => setMostrar(true);
-
-    
-    useEffect(() => {
-        <NuevoCompromiso></NuevoCompromiso>
-
-    }, [mostrar]);
-    
 
 //useEffect(() => {
 //  console.log(equipos);
@@ -141,6 +134,7 @@ const Formulario = () => {
                         } }   
                     />
                 </div>
+                
 
                 <div className="orden">
                     <p className="titulo-label"><label>Notas de la reunión</label></p>
@@ -163,16 +157,16 @@ const Formulario = () => {
                     >       
                             Confirmar
                     </Button>
-                </div> 
+                    { mostrar(true) && 
+                                <NuevoCompromiso></NuevoCompromiso>
+                            }
+                </div>  
         </div>
         </center> 
     )
 }
 
 export default Formulario;   
-//  {mostrar && 
-//<NuevoCompromiso></NuevoCompromiso>
-//}
 // <CKEditor
 //editor={ ClassicEditor }
 //onReady={ editor => {

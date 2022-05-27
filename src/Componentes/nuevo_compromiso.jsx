@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import {  Modal } from 'antd';
 const NuevoCompromiso = () => {
     
-    const [mostrar,setMostrar] = useState(false);
+    const [mostrar,setMostrar] = useState(true);
     const esconderModal = () => setMostrar(false);
     const ok = () => setMostrar(false);
    // const mostrarModal = () => setMostrar(true);
