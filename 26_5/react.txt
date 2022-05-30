@@ -1,4 +1,0 @@
-npx create-react-app
-npx create-react-app
-
-descargar node.js, sourcetree,git
