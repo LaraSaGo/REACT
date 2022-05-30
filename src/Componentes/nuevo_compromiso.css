@@ -1,6 +1,6 @@
 /* STYLES DEL MODAL */
 
-.ant-modal-content{
+.modal__nuevo{
     width: 500px;
     height: 600px;
 }
@@ -26,6 +26,7 @@
     width: 280px;
     height: 75px;
     text-align: center;
+    margin-bottom: 20px;
 }
 .modal2__lb {
     text-align: right;
@@ -57,22 +58,26 @@
 
 .modal4 {
     float: left;
-    margin-top: 75px;
-    width: 445px;
+    margin-top: 85px;
+    margin-left: 25px;
 
 }
 
 .modal4__bt1 {
     height: 50px;
+    width: 400px;
 }
 
 .modal5 {
     float: left;
-    width: 445px;
+    width: 400px;
+    margin-top: 20px;
+    margin-left: 25px;
 
 
 }
 
 .modal5__bt1 {
     height: 50px;
+    margin-bottom: 20px;
 }

@@ -164,6 +164,7 @@ const Formulario = () => {
                     <NuevoCompromiso 
                         mostrar={mostrar}
                         setMostrar={setMostrar}
+                        asist={asistente}
                     />
                     
 
