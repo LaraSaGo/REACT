@@ -2,7 +2,7 @@
 
 .ant-modal-content{
     width: 500px;
-    height: 500px;
+    height: 600px;
 }
 .modal1 {
     float: left;
@@ -57,12 +57,22 @@
 
 .modal4 {
     float: left;
-    width: 220px;
-    height: 75px;
+    margin-top: 75px;
+    width: 445px;
+
+}
+
+.modal4__bt1 {
+    height: 50px;
 }
 
 .modal5 {
-    float: right;
-    width: 220px;
-    height: 75px;
+    float: left;
+    width: 445px;
+
+
+}
+
+.modal5__bt1 {
+    height: 50px;
 }

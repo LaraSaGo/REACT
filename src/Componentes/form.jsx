@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './form.css'
 import 'antd/dist/antd.css';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Select,Button } from 'antd';
-import NuevoCompromiso from "./nuevo_compromiso";
+import NuevoCompromiso from "./nuevo_compromiso.jsx";
 const { Option } = Select;
 const invitados = [{nombre: 'Alex', id: 1},{nombre: 'Alex2', id: 2},{nombre: 'Alex3', id: 3}];
 const asistentes = [{nombre: 'Juan', id: 1},{nombre: 'Juan2', id: 2},{nombre: 'Juan3', id: 3}]
@@ -21,20 +21,17 @@ const Formulario = () => {
     const [orden, setOrden] = useState("");
     const [notas, setNotas] = useState("");
     const [mostrar,setMostrar] = useState(false);
-   // const esconderModal = () => setMostrar(false);
+    //const esconderModal = () => setMostrar(false);
    // const ok = () => setMostrar(false);
     const mostrarModal = () => setMostrar(true);
 
+    //useEffect(() => {
+    //    <NuevoCompromiso></NuevoCompromiso>
+    //    return () => {
+    //       esconderModal
+    //    }
+    //}, [mostrar]);
     
-    useEffect(() => {
-        <NuevoCompromiso></NuevoCompromiso>
-
-    }, [mostrar]);
-    
-
-//useEffect(() => {
-//  console.log(equipos);
-//}, [equipos])
 
     return (      
         <center>
@@ -162,7 +159,14 @@ const Formulario = () => {
                             onClick={mostrarModal}
                     >       
                             Confirmar
-                    </Button>
+                    </Button>       
+
+                    <NuevoCompromiso 
+                        mostrar={mostrar}
+                        setMostrar={setMostrar}
+                    />
+                    
+
                 </div> 
         </div>
         </center> 
@@ -170,8 +174,9 @@ const Formulario = () => {
 }
 
 export default Formulario;   
-//  {mostrar && 
-//<NuevoCompromiso></NuevoCompromiso>
+
+//{ mostrar && 
+//    <NuevoCompromiso></NuevoCompromiso>
 //}
 // <CKEditor
 //editor={ ClassicEditor }
