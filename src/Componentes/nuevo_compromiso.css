@@ -66,18 +66,5 @@
 .modal4__bt1 {
     height: 50px;
     width: 400px;
-}
-
-.modal5 {
-    float: left;
-    width: 400px;
-    margin-top: 20px;
-    margin-left: 25px;
-
-
-}
-
-.modal5__bt1 {
-    height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }

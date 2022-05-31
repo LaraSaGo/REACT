@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import './nuevo_compromiso.css';
 import 'antd/dist/antd.css';
-import {  Modal, Button } from 'antd';
+import {  Select,Modal, Button } from 'antd';
+const { Option } = Select;
 
 
-const NuevoCompromiso = ({mostrar,setMostrar,asist}) => {
+const NuevoCompromiso = ({mostrar,setMostrar,respon}) => {
 
     const [vencimiento, setVencimiento] = useState("");
     const [titulo2, setTitulo2] = useState("");
@@ -17,7 +18,6 @@ const NuevoCompromiso = ({mostrar,setMostrar,asist}) => {
     const mostrarAsignados = () => setAsignados(true);
     const esconderModal2 = () => setAsignados(false);
     const ok2 = () => setAsignados(false);
-
 
     return (
         <Modal title="Nuevo compromiso"
@@ -68,14 +68,26 @@ const NuevoCompromiso = ({mostrar,setMostrar,asist}) => {
                 onCancel={esconderModal2}
             >
                 <p>Asignados</p>
-                 
-                <p>Sin Asignar</p>  
-            </Modal>
-                
-            <div className="modal5">
-                <Button className="modal5__bt1" block>Sin asignar</Button>
-            </div>
+                <>
+                    <Select
+                    mode="multiple"
+                    allowClear
+                    style={{
+                        width: '100%',
+                    }}
+                    placeholder="Asistentes añadidos"
+                    >
+                        {respon.map((a) => {
+                        return <Option key={a.id}>{a.nombre}</Option>
+                        })}
+                        
+                    </Select>
+                </>
+               
+            </Modal>  
         </Modal>
+
     );
 };
+
 export default NuevoCompromiso;

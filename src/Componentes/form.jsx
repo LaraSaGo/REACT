@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './form.css'
 import 'antd/dist/antd.css';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -7,7 +7,7 @@ import { Select,Button } from 'antd';
 import NuevoCompromiso from "./nuevo_compromiso.jsx";
 const { Option } = Select;
 const invitados = [{nombre: 'Alex', id: 1},{nombre: 'Alex2', id: 2},{nombre: 'Alex3', id: 3}];
-const asistentes = [{nombre: 'Juan', id: 1},{nombre: 'Juan2', id: 2},{nombre: 'Juan3', id: 3}]
+const asistentes = [{nombre: 'Juan', id: 4},{nombre: 'Juan2', id: 5},{nombre: 'Juan3', id: 6}];
 
 const Formulario = () => {
    
@@ -16,21 +16,21 @@ const Formulario = () => {
     const [ubicacion, setUbicacion] = useState("");
     const [fecha, setFecha] = useState("");
     const [canal, setCanal] = useState("");
-    const [asistente, setAsistentes] = useState("");
-    const [invitado, setInvitados] = useState("");
+    const [asistente, setAsistente] = useState([]);
+    const [responsables, setResponsables] = useState([])
+    const [invitado, setInvitados] = useState([]);
     const [orden, setOrden] = useState("");
     const [notas, setNotas] = useState("");
     const [mostrar,setMostrar] = useState(false);
     //const esconderModal = () => setMostrar(false);
    // const ok = () => setMostrar(false);
+   
     const mostrarModal = () => setMostrar(true);
 
-    //useEffect(() => {
-    //    <NuevoCompromiso></NuevoCompromiso>
-    //    return () => {
-    //       esconderModal
-    //    }
-    //}, [mostrar]);
+    useEffect(() => {
+      console.log(responsables)
+    }, [responsables])
+    
     
 
     return (      
@@ -91,18 +91,29 @@ const Formulario = () => {
                     <p><label>Asistentes</label></p>
                 <>
                     <Select
-                    mode="multiple"
-                    allowClear
-                    style={{
-                        width: '100%',
-                    }}
-                    placeholder="Seleccione asistentes"
+                        mode="multiple"
+                        allowClear
+                        style={{
+                            width: '100%',
+                        }}
+                        placeholder="Seleccione asistentes"
+                        value={asistente}
+                        onChange={(values) =>{
+                            setAsistente(values)
+                           // console.log(asistentes)
+                           // console.log(values)
+                            const x  = asistentes.filter(a =>{
+                                return values.includes("" + a.id)
+                            })
+                           // console.log(x)
+                            setResponsables(x)
+                        }}
+                        
                     >
                     {asistentes.map((a) => {
                         return <Option key={a.id}>{a.nombre}</Option>
                     })}
-                    value={asistente}
-                    onChange={(e) => setAsistentes(e.target.value)}
+                   
                     </Select>
                 </>
                 </div>
@@ -131,7 +142,7 @@ const Formulario = () => {
                     <CKEditor
                         editor={ ClassicEditor }
                         value={orden}
-                        onChange={ ( event, editor,e) => {
+                        onChange={ ( event, editor) => {
                             const data = editor.getData();
                             console.log( { event, editor, data } );
                             setOrden(data)
@@ -164,15 +175,29 @@ const Formulario = () => {
                     <NuevoCompromiso 
                         mostrar={mostrar}
                         setMostrar={setMostrar}
-                        asist={asistente}
+                        asist={asistentes}
+                        respon={responsables}
+                       
                     />
                     
 
                 </div> 
+
+              
         </div>
         </center> 
     )
 }
+
+
+    
+<div className="footer">
+    <p>Vencimiento:</p>
+    <p>Título:</p>
+    <p>Descripción:</p>
+    <p>Asignados:</p>
+</div>
+    
 
 export default Formulario;   
 
