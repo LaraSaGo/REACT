@@ -68,3 +68,21 @@ useEffect(() => {
 
     }
   </div>
+
+
+onOk={() => {
+    submitValue({
+        title: x,
+        desc: yield,
+        
+    })
+}}
+
+submitValue={(v) => {
+    setxxx([...xxx, v])
+}}
+ 
+
+{invitados.map((a) => {
+    return <Option key={a.id}>{a.nombre}</Option>
+})}

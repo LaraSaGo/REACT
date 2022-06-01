@@ -5,14 +5,14 @@ import {  Select,Modal, Button } from 'antd';
 const { Option } = Select;
 
 
-const NuevoCompromiso = ({mostrar,setMostrar,respon}) => {
+const NuevoCompromiso = ({mostrar,setMostrar,respon, submitValue}) => {
 
     const [vencimiento, setVencimiento] = useState("");
     const [titulo2, setTitulo2] = useState("");
     const [descripcion, setDescripcion] = useState("");
 
     const esconderModal = () => setMostrar(false);
-    const ok = () => setMostrar(false);
+    
 
     const [asignados,setAsignados] = useState(false);
     const mostrarAsignados = () => setAsignados(true);
@@ -23,7 +23,15 @@ const NuevoCompromiso = ({mostrar,setMostrar,respon}) => {
         <Modal title="Nuevo compromiso"
             className="modal__nuevo"
             visible={mostrar}
-            onOk={ok}
+            onOk= {() => {
+                submitValue({
+                    fecha_nuevo:{vencimiento},
+                    titulo_nuevo:{titulo2},
+                    descripcion_nuevo:{descripcion}
+                
+                })
+                setMostrar(false)
+            }}
             onCancel={esconderModal}
         >
             <div className="modal1">
@@ -51,7 +59,8 @@ const NuevoCompromiso = ({mostrar,setMostrar,respon}) => {
                     value={descripcion}
                     onChange={(e) => setDescripcion(e.target.value)}
                 >
-                </textarea></p>                
+                </textarea></p>   
+            
             </div>
             <div className="modal4">
                 <Button className="modal4__bt1" 
@@ -61,6 +70,7 @@ const NuevoCompromiso = ({mostrar,setMostrar,respon}) => {
                     Asignados
                 </Button>               
             </div>
+            
 
             <Modal title="Asignar"
                 visible={asignados}
@@ -82,8 +92,7 @@ const NuevoCompromiso = ({mostrar,setMostrar,respon}) => {
                         })}
                         
                     </Select>
-                </>
-               
+                </>  
             </Modal>  
         </Modal>
 

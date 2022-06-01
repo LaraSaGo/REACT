@@ -9,7 +9,7 @@ const { Option } = Select;
 const invitados = [{nombre: 'Alex', id: 1},{nombre: 'Alex2', id: 2},{nombre: 'Alex3', id: 3}];
 const asistentes = [{nombre: 'Juan', id: 4},{nombre: 'Juan2', id: 5},{nombre: 'Juan3', id: 6}];
 
-const Formulario = () => {
+const Formulario = (props) => {
    
     const [titulo, setTitulo] = useState("");
     const [equipos, setEquipos] = useState("");
@@ -22,6 +22,9 @@ const Formulario = () => {
     const [orden, setOrden] = useState("");
     const [notas, setNotas] = useState("");
     const [mostrar,setMostrar] = useState(false);
+    const [datos, setDatos] = useState([]);
+
+    
     //const esconderModal = () => setMostrar(false);
    // const ok = () => setMostrar(false);
    
@@ -177,33 +180,28 @@ const Formulario = () => {
                         setMostrar={setMostrar}
                         asist={asistentes}
                         respon={responsables}
-                       
+                        submitValue={(v) => {
+                            setDatos([...datos,v])
+                          console.log(v)  
+                        }}
+
                     />
-                    
-
                 </div> 
-
-              
+                <div className="footer">
+                    {datos.map((v) => {
+                           return <ul>
+                                    <li>Vencimiento: {v.fecha_nuevo}</li>;
+                                    <li>Título: {v.titulo_nuevo}</li>;
+                                    <li>Descripción: {v.descripcion_nueva}</li>;
+                            </ul>
+                    })}
+                </div>         
         </div>
         </center> 
     )
 }
-
-
-    
-<div className="footer">
-    <p>Vencimiento:</p>
-    <p>Título:</p>
-    <p>Descripción:</p>
-    <p>Asignados:</p>
-</div>
-    
-
 export default Formulario;   
 
-//{ mostrar && 
-//    <NuevoCompromiso></NuevoCompromiso>
-//}
 // <CKEditor
 //editor={ ClassicEditor }
 //onReady={ editor => {
