@@ -1,0 +1,97 @@
+
+.index {
+    width: 800px;
+    height: 1500px;
+    padding: 0 2rem 2rem 2rem;
+    margin: 7rem 10rem 10rem 7rem;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+.titulo {
+    padding-top: 70px;
+}
+.titulo-label {
+    font-size: x-large;
+    width: 500px;
+}
+.titulo-respuesta {
+    font-size: medium;
+    width: 736px;
+}
+
+.equipos {
+   
+    font-size: medium;
+    width: 350px;
+    height: 100px;
+    float: left;
+}
+
+.equipos-menu {
+    width: 350px;
+    font-size: medium;
+}
+.canal {
+    font-size: medium;
+    width: 350px;
+    height: 100px;
+    float: right;
+}
+
+.canal-menu {
+    width: 350px;
+    font-size: medium;
+}
+
+.ubicacion {
+    float: right;
+    font-size: medium;
+    width: 530px;
+    height: 100px;
+}
+.ubicacion-respuesta{
+    width: 530px;
+    font-size: medium;
+}
+.fecha {
+    font-size: medium;
+    float: left;
+}
+
+.orden {
+    font-size: medium;
+    width: 735px;
+    height: 150px;
+    float: left;
+}
+
+.asistentes {
+    float: left;
+    font-size: medium;
+    width: 350px;
+}
+
+.invitados {
+    float: right;
+    font-size: medium;
+    width: 350px;
+}
+
+.boton {
+    float: right;
+    width: 200px;
+    height: 150px;
+    margin-top: 50px;
+    margin-right: 250px;
+}
+
+.footer {
+    margin-left: 200px;
+    float: left;
+    height: 200px;
+    font-size: medium;
+    width: 500px;
+    margin-top: 75px;
+    margin-left: 150px;
+}
